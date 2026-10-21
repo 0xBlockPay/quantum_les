@@ -2,6 +2,8 @@
 
 *A quantum-enhanced LES closure model — the quantum computer as an unconventional SGS model, not the CFD engine*
 
+![](banner.png)
+
 **Main file:** `quantum_les_rev4.py` (single file, ~2310 lines; the filename is historical — the code is **Rev 12**, FIX 1–40)
 
 A research platform: a **classical** LES solver (compressible Navier-Stokes + k_SGS transport) with an experimental **quantum-enhanced subgrid-scale (SGS) closure** — a per-block VQE (Variational Quantum Eigensolver) on a spectral-triad Hamiltonian. The same codebase doubles as an **LES benchmarking platform**: head-to-head comparison of the quantum closure against standard classical models (Smagorinsky, WALE, Spatially-Averaged Dynamic Germano) and against a no-SGS reference trajectory ("DNS-mode"), all on the common **Taylor-Green vortex** benchmark.
