@@ -35,6 +35,34 @@ Those are two different questions.
 | Which LES model do I use tomorrow in an aircraft simulation? | Can quantum state space represent turbulent triad couplings better than classical SGS models? |
 | Answer: **WALE** (and it stays that way) | This is exactly what the project tries to answer |
 
+### Why quantum mechanics? — as a computational tool, not as physics
+
+This is **not** about:
+
+> "small vortices are quantum"
+
+it is about:
+
+> "the space of possible couplings between modes is enormous"
+
+and a quantum computer can potentially represent this well: **high-dimensional states, entangled degrees of freedom, large Hilbert spaces**. So the argument goes:
+
+> **We use quantum mechanics as a computational tool for SGS modeling, not because SGS turbulence is a quantum phenomenon.**
+
+That is a huge difference. For example — WALE does:
+
+```text
+u(x) → gradients → analytic formula → νt
+```
+
+while Quantum-LES does:
+
+```text
+u(x) → FFT → triads k,p,q → Hamiltonian → VQE → eps_sgs → νt
+```
+
+The QPU plays the role of a **very complex nonlinear approximator**: a parametrized quantum circuit (ansatz), optimized by VQE, evaluates the effective block dissipation from the full triad spectrum — without a closed analytic formula (which simply does not exist in SGS).
+
 ### What the benchmarks have shown so far — very honestly
 
 **Achieved:**
